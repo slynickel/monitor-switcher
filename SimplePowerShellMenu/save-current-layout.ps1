@@ -1,0 +1,2 @@
+$file = Read-Host -Prompt 'To save current monitor configuration enter a file name prefix (do not include .xml). Underscores will be rendered in the menu options as spaces.'
+Start-Process -Filepath "..\MonitorSwitcher\bin\Release\net6.0\MonitorSwitcher.exe" -ArgumentList  "-save:`"$file`.xml" -Wait -NoNewWindow
