@@ -29,6 +29,6 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: Executable
-        path: MonitorSwitcher\bin\Release\net6.0\MonitorSwitcher.exe
+        path: MonitorSwitcher\bin\Debug\net6.0\MonitorSwitcher.exe
 #     - name: Test
 #       run: dotnet test --no-build --verbosity normal
