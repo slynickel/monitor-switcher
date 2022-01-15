@@ -20,14 +20,15 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 6.0.x
-    # - name: Restore dependencies
-    #   run: dotnet restore
     - name: Build
       run: dotnet publish -r win-x64 /p:PublishSingleFile=true --self-contained MonitorSwitcher\MonitorSwitcher.csproj
     - name: Upload build artifacts
       uses: actions/upload-artifact@v2
       with:
-        name: Executable
+        name: MonitorSwitcher
         path: MonitorSwitcher\bin\Debug\net6.0\win-x64\publish\MonitorSwitcher.exe
-#     - name: Test
-#       run: dotnet test --no-build --verbosity normal
+    - name: Upload powershell
+      uses: actions/upload-artifact@v2
+      with:
+        name: MonitorSwitcher
+        path: SimplePowerShellMenu\*.ps1
