@@ -1,5 +1,5 @@
 # update this to wherever you have the monitor switch file downloaded
-$executablePath="..\MonitorSwitcher\bin\Release\net6.0\MonitorSwitcher.exe"
+$executablePath=".\MonitorSwitcher.exe"
 
 # if file does not exist
 if (-not(Test-Path -Path $executablePath -PathType Leaf)) {
@@ -32,7 +32,7 @@ if ($null -eq $file) {
 }
 
 try {
-	Start-Process -Filepath "..\MonitorSwitcher\bin\Release\net6.0\MonitorSwitcher.exe" -ArgumentList  "-load:`"$file`" -noidmatch" -Wait -NoNewWindow
+	Start-Process -Filepath $executablePath -ArgumentList  "-load:`"$file`" -noidmatch" -Wait -NoNewWindow
 }
 catch {
 	Write-Host $_
